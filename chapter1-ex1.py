@@ -25,4 +25,4 @@ for p in permutation(data):
   txt=""
   for i in p:
     txt=txt+' '+portnames[int(i)]
-  print(' '+portnames[0]+txt)
+  print(portnames[0]+txt)
