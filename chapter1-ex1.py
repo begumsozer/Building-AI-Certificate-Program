@@ -1,5 +1,3 @@
-portnames = ["PAN", "AMS", "CAS", "NYC", "HEL"]
- 
 def permutation(lst): 
     if len(lst) == 0: 
         return [] 
@@ -19,7 +17,8 @@ def permutation(lst):
        for p in permutation(remLst): 
            l.append([m] + p) 
     return l 
-  
+ 
+portnames = ["PAN", "AMS", "CAS", "NYC", "HEL"]
 data = list('1234') 
 for p in permutation(data): 
   txt=""
