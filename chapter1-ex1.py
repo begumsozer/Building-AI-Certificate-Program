@@ -1,27 +1,17 @@
-def permutation(lst): 
-    if len(lst) == 0: 
-        return [] 
-  
-
-    if len(lst) == 1: 
-        return [lst] 
-    
-    l = [] 
-  
-    for i in range(len(lst)): 
-       m = lst[i] 
-
-       remLst = lst[:i] + lst[i+1:] 
-  
-
-       for p in permutation(remLst): 
-           l.append([m] + p) 
-    return l 
- 
 portnames = ["PAN", "AMS", "CAS", "NYC", "HEL"]
-data = list('1234') 
-for p in permutation(data): 
-  txt=""
-  for i in p:
-    txt=txt+' '+portnames[int(i)]
-  print(portnames[0]+txt)
+ 
+def permutations(route, ports):
+
+    if len(ports) == 0:
+      print(' '.join([portnames[j] for j in route]))
+      return
+      
+    for i in range(len(ports)): 
+       m = route.copy()
+       m.append(ports[i])
+       remLst = ports[:i] + ports[i+1:]
+       permutations(m,remLst)
+    
+    return 
+
+permutations([0], list(range(1, len(portnames))))
